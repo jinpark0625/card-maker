@@ -1,8 +1,12 @@
-import "./app.css";
+import styles from "./app.module.css";
+import Login from "./components/login/login";
 
 function App() {
-  const name = "jin";
-  return <h1>Hello ??{name}</h1>;
+  return (
+    <section className={styles.main}>
+      <Login></Login>
+    </section>
+  );
 }
 
 export default App;

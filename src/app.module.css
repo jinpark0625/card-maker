@@ -1,0 +1,9 @@
+@value makerLightGrey from './common/colors.css';
+
+.main {
+  background-color: makerLightGrey;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
