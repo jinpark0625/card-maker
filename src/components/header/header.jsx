@@ -1,5 +1,5 @@
-import React from 'react';
-import styles from './header.module.css';
+import React from "react";
+import styles from "./header.module.css";
 
 const Header = ({ onLogout }) => (
   <header className={styles.header}>
