@@ -1,12 +1,8 @@
 import styles from "./app.module.css";
 import Login from "./components/login/login";
 
-function App() {
-  return (
-    <section className={styles.main}>
-      <Login></Login>
-    </section>
-  );
+function App({ authService }) {
+  return <Login authService={authService} />;
 }
 
 export default App;
