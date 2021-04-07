@@ -3,7 +3,7 @@ import Login from "./components/login/login";
 import Maker from "./components/maker/maker";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-function App({ authService }) {
+function App({ authService, FileInput, cardRepository }) {
   return (
     <div className={styles.main}>
       <BrowserRouter>
@@ -12,7 +12,11 @@ function App({ authService }) {
             <Login authService={authService} />
           </Route>
           <Route path="/maker">
-            <Maker authService={authService} />
+            <Maker
+              authService={authService}
+              FileInput={FileInput}
+              cardRepository={cardRepository}
+            />
           </Route>
         </Switch>
       </BrowserRouter>

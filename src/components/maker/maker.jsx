@@ -6,55 +6,36 @@ import Preview from "../preview/preview";
 import styles from "./maker.module.css";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
-const Maker = ({ authService }) => {
+const Maker = ({ authService, FileInput, cardRepository }) => {
   const history = useHistory();
-  const [cards, setCards] = useState({
-    1: {
-      id: "1",
-      name: "jin",
-      company: "google",
-      theme: "dark",
-      title: "Software Engineer",
-      email: "jin@gmail.com",
-      message: "slow and steady win the race",
-      fileName: "jin",
-      fileURL: "jin.png",
-    },
-    2: {
-      id: "2",
-      name: "lelel",
-      company: "google",
-      theme: "light",
-      title: "Software Engineer",
-      email: "jin@gmail.com",
-      message: "slow and steady win the race",
-      fileName: "jin",
-      fileURL: null,
-    },
-    3: {
-      id: "3",
-      name: "safda",
-      company: "google",
-      theme: "colorful",
-      title: "Software Engineer",
-      email: "jin@gmail.com",
-      message: "slow and steady win the race",
-      fileName: "jin",
-      fileURL: null,
-    },
-  });
+  const historyState = history?.location?.state;
+
+  const [cards, setCards] = useState({});
+  const [userId, setUserId] = useState(historyState && historyState.id);
 
   const onLogout = () => {
     authService.logout();
   };
 
   useEffect(() => {
+    if (!userId) {
+      return;
+    }
+    const stopSync = cardRepository.syncCards(userId, (cards) => {
+      setCards(cards);
+    });
+    return () => stopSync();
+  }, [userId, cardRepository]);
+
+  useEffect(() => {
     authService.onAuthChange((user) => {
-      if (!user) {
+      if (user) {
+        setUserId(user.uid);
+      } else {
         history.push("/");
       }
     });
-  });
+  }, [authService, userId, history]);
 
   const createOrUpdateCard = (card) => {
     // 예전의 상태인 cards를 받아서 복사해와서, card안에있는 해당하는 키를 업데이트해준다
@@ -63,6 +44,7 @@ const Maker = ({ authService }) => {
       updated[card.id] = card;
       return updated;
     });
+    cardRepository.saveCard(userId, card);
   };
 
   const deleteCard = (card) => {
@@ -71,12 +53,15 @@ const Maker = ({ authService }) => {
       delete updated[card.id];
       return updated;
     });
+    cardRepository.removeCard(userId, card);
   };
+
   return (
     <section className={styles.maker}>
       <Header onLogout={onLogout} />
       <div className={styles.container}>
         <Editor
+          FileInput={FileInput}
           cards={cards}
           addCard={createOrUpdateCard}
           updateCard={createOrUpdateCard}
