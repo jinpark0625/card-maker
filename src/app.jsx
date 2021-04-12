@@ -1,9 +1,10 @@
 import styles from "./app.module.css";
 import Login from "./components/login/login";
 import Maker from "./components/maker/maker";
+import GameMain from "./components/game_main/game_main";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-function App({ authService, FileInput, cardRepository }) {
+function App({ authService, FileInput, cardRepository, pokemon }) {
   return (
     <div className={styles.main}>
       <BrowserRouter>
@@ -17,6 +18,9 @@ function App({ authService, FileInput, cardRepository }) {
               FileInput={FileInput}
               cardRepository={cardRepository}
             />
+          </Route>
+          <Route path="/game">
+            <GameMain pokemon={pokemon} />
           </Route>
         </Switch>
       </BrowserRouter>

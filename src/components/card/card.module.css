@@ -12,18 +12,32 @@
   max-width: 30rem;
 }
 
-.card.dark {
-  background-color: makerBlack;
+.card.bronze {
+  background: linear-gradient(
+    45deg,
+    rgba(223, 182, 103, 1) 0%,
+    rgba(249, 243, 232, 1) 56%,
+    rgba(231, 192, 116, 1) 96%
+  );
   color: makerWhite;
 }
 
-.card.light {
-  background-color: makerWhite;
+.card.silver {
+  background: linear-gradient(
+    45deg,
+    rgba(160, 160, 160, 1) 0%,
+    rgba(232, 232, 232, 1) 56%
+  );
   color: makerBlack;
 }
 
-.card.colorful {
-  background: makerColorful;
+.card.gold {
+  background: linear-gradient(
+    45deg,
+    rgba(242, 215, 12, 1) 0%,
+    rgba(255, 255, 255, 1) 56%,
+    rgba(252, 235, 0, 1) 96%
+  );
 }
 
 .avatar {

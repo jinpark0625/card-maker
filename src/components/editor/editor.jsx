@@ -6,7 +6,7 @@ import CardAddForm from "../card_add_form/card_add_form";
 const Editor = ({ FileInput, cards, addCard, updateCard, deleteCard }) => {
   return (
     <section className={styles.editor}>
-      <h1 className={styles.title}>Card Maker</h1>
+      <h1 className={styles.title}>Create Pokemon Trainer</h1>
       {Object.keys(cards).map((key) => (
         <CardEditForm
           key={key}

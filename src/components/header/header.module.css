@@ -1,15 +1,16 @@
-@value makerGreen, makerBlack, makerWhite from '../../common/colors.css';
+@value makerBlue, makerYellow, makerWhite from '../../common/colors.css';
 
 .header {
   width: 100%;
-  text-align: center;
   padding: 0.5em 0;
-  background-color: makerGreen;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo {
-  width: 3em;
+  width: 20em;
 }
 
 .title {
@@ -20,12 +21,34 @@
 .logout {
   position: absolute;
   right: 3em;
-  top: 1em;
+  top: 50%;
   padding: 0.8em;
   border-radius: 20%;
-  background-color: makerBlack;
-  color: makerWhite;
+  background-color: makerYellow;
+  color: #395a88;
+  font-weight: bold;
   outline: 0;
-  border: 0;
+  border: 2px solid #395a88;
   cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.start {
+  position: absolute;
+  left: 3em;
+  background: none;
+  outline: none;
+  border: none;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+.start_img {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+.start:hover .start_img {
+  transform: scale(1.1);
 }

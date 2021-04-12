@@ -60,9 +60,9 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
         value={theme}
         onChange={onChange}
       >
-        <option value="light">light</option>
-        <option value="dark">dark</option>
-        <option value="colorful">colorful</option>
+        <option value="bronze">bronze</option>
+        <option value="silver">silver</option>
+        <option value="gold">gold</option>
       </select>
       <input
         ref={titleRef}

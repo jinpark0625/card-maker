@@ -21,29 +21,39 @@ const Login = ({ authService }) => {
   });
 
   const onLogin = (event) => {
+    const text = event.currentTarget.textContent.slice(-6);
+
     authService //
-      .login(event.currentTarget.textContent)
+      .login(text)
       .then((data) => goToMaker(data.user.uid));
   };
   return (
     <section className={styles.login}>
       <Header />
       <section>
-        <h1>Login</h1>
         <ul className={styles.list}>
           <li className={styles.item}>
-            <button className={styles.button} onClick={onLogin}>
+            <button
+              className={`${styles.button} ${styles.googleBtn}`}
+              onClick={onLogin}
+            >
+              <i className={`fab fa-google ${styles.loginLogo}`}></i> Login with
               Google
             </button>
           </li>
           <li className={styles.item}>
-            <button className={styles.button} onClick={onLogin}>
+            <button
+              className={`${styles.button} ${styles.githubBtn}`}
+              onClick={onLogin}
+            >
+              <i className={`fab fa-github ${styles.loginLogo}`}></i> Login with
               Github
             </button>
           </li>
         </ul>
       </section>
       <Footer />
+      <img className={styles.background} src="/images/pokebg.png" alt="" />
     </section>
   );
 };

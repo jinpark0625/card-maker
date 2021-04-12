@@ -1,0 +1,49 @@
+.game__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+.game__button {
+  width: 60px;
+  height: 60px;
+  border-color: wheat;
+  border: 3px solid black;
+  font-size: 24px;
+  transition: transform 300ms ease-in;
+  border-radius: 10px;
+}
+.game__button:hover {
+  transform: scale(1.1);
+}
+.game__timer {
+  visibility: hidden;
+}
+.game__score {
+  visibility: hidden;
+}
+.game__timer_show {
+  width: 100px;
+  background-color: white;
+  text-align: center;
+  border: 3px solid black;
+  border-radius: 20px;
+  font-size: 32px;
+  margin-top: 8px;
+  visibility: visible;
+  user-select: none;
+  cursor: auto;
+}
+.game__score_show {
+  user-select: none;
+  cursor: auto;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  font-size: 38px;
+  margin-top: 8px;
+  border: 3px solid black;
+  border-radius: 50%;
+  background-color: darksalmon;
+  color: white;
+}

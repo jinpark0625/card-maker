@@ -1,12 +1,13 @@
-@value makerGreen, makerLightPink, makerWhite from '../../common/colors.css';
+@value makerFontColor,makerGreen,makerYellow,makerLightYellow,makerBlue, makerLightBlue, makerWhite from '../../common/colors.css';
 
 .login {
-  width: 30em;
+  width: 23em;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: makerWhite;
+  margin-bottom: 20%;
 }
 
 .list {
@@ -19,6 +20,7 @@
 }
 
 .item {
+  margin-top: 1em;
   margin-bottom: 0.5em;
   width: 80%;
 }
@@ -28,12 +30,35 @@
   height: 2.5em;
   font-size: 1.2rem;
   border-radius: 1.2rem;
-  background-color: transparent;
   cursor: pointer;
-  border: 0.2rem solid makerGreen;
+  border: none;
   outline: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2em;
+  transition: 0.3s background ease-in-out;
+}
+.googleBtn {
+  background-color: makerLightYellow;
+}
+.googleBtn:hover {
+  background-color: makerYellow;
+}
+.githubBtn {
+  background-color: makerLightBlue;
+}
+.githubBtn:hover {
+  background-color: makerBlue;
 }
 
-.button:hover {
-  background-color: makerLightPink;
+.loginLogo {
+  font-size: 1.3em;
+}
+.background {
+  width: 43%;
+  position: fixed;
+  left: 50%;
+  bottom: 3%;
+  transform: translate(-50%, 0);
 }

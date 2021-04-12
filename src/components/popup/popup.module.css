@@ -1,0 +1,41 @@
+.pop_up {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 400px;
+  height: 140px;
+  padding: 20px;
+  background-color: #00000070;
+  color: white;
+  text-align: center;
+  margin: auto;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  z-index: 2;
+}
+.pop_up__hide {
+  display: none;
+}
+.pop_up__refresh {
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 50%;
+}
+.pop_up__message {
+  display: block;
+  font-size: 38px;
+  margin-top: 20px;
+}
+.carrot,
+.bug {
+  cursor: pointer;
+  transition: transform 100ms ease-in;
+}
+.carrot:hover,
+.bug:hover {
+  transform: scale(1.1);
+}
