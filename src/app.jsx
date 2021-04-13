@@ -4,7 +4,7 @@ import Maker from "./components/maker/maker";
 import GameMain from "./components/game_main/game_main";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-function App({ authService, FileInput, cardRepository, pokemon }) {
+function App({ authService, FileInput, cardRepository, pokemon, sound }) {
   return (
     <div className={styles.main}>
       <BrowserRouter>
@@ -20,7 +20,7 @@ function App({ authService, FileInput, cardRepository, pokemon }) {
             />
           </Route>
           <Route path="/game">
-            <GameMain pokemon={pokemon} />
+            <GameMain pokemon={pokemon} sound={sound} />
           </Route>
         </Switch>
       </BrowserRouter>

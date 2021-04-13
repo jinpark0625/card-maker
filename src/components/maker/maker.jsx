@@ -58,6 +58,7 @@ const Maker = ({ authService, FileInput, cardRepository }) => {
 
   return (
     <section className={styles.maker}>
+      <img src="/images/bg.jpeg" alt="" className={styles.bg} />
       <Header onLogout={onLogout} />
       <div className={styles.container}>
         <Editor

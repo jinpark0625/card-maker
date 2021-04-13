@@ -30,7 +30,10 @@ const Login = ({ authService }) => {
   return (
     <section className={styles.login}>
       <Header />
-      <section>
+      <figure>
+        <img src="/images/main.gif" alt="pokeBg" />
+      </figure>
+      <section className={styles.login_wrap}>
         <ul className={styles.list}>
           <li className={styles.item}>
             <button
@@ -53,7 +56,7 @@ const Login = ({ authService }) => {
         </ul>
       </section>
       <Footer />
-      <img className={styles.background} src="/images/pokebg.png" alt="" />
+      {/* <img className={styles.background} src="/images/pokebg.png" alt="" /> */}
     </section>
   );
 };

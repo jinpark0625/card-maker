@@ -1,20 +1,15 @@
-import React, { useRef, useEffect, useState, memo } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import styles from "./item.module.css";
 
 const Item = ({ item, pokeData, wrapRef, getScore, gameReset, gameLose }) => {
   const [pokeUrl, setPokeUrl] = useState(null);
   const [pokeName, setPokeName] = useState(null);
   const [pokeId, setPokeId] = useState(null);
-  const [pokeWeight, setPokeWeight] = useState(null);
-  const [pokeHeight, setPokeHeight] = useState(null);
   const [rocketurl, setRocketUrl] = useState(null);
   const [pokeStyle, setPokeStyle] = useState(false);
 
   const pokeMonRef = useRef();
   const rocketRef = useRef();
-
-  const randomId = Math.floor(Math.random() * 151) + 1;
-  const randomIdR = Math.floor(Math.random() * 5);
 
   const randomNumber = (min, max) => {
     return Math.random() * (max - min) + min;
@@ -42,12 +37,13 @@ const Item = ({ item, pokeData, wrapRef, getScore, gameReset, gameLose }) => {
   };
 
   useEffect(() => {
+    const randomIdR = Math.floor(Math.random() * 5);
+    const randomId = Math.floor(Math.random() * 151) + 1;
+
     randomPlace(pokeMonRef, rocketRef);
     setPokeUrl(pokeData[randomId].data.sprites.front_default);
     setPokeName(pokeData[randomId].data.name);
     setPokeId(pokeData[randomId].data.id);
-    setPokeWeight(pokeData[randomId].data.weight);
-    setPokeHeight(pokeData[randomId].data.height);
 
     setRocketUrl(`/images/rocket${randomIdR}.png`);
   }, [pokeData, gameReset]);
@@ -78,11 +74,11 @@ const Item = ({ item, pokeData, wrapRef, getScore, gameReset, gameLose }) => {
             onClick={gameLose}
           />
           <div className={styles.list}>
-            <h5>Name: {pokeName}</h5>
-            <h5>Id: {pokeId}</h5>
-            <h5>Height: {pokeHeight}</h5>
-            <h5>Weight: {pokeWeight}</h5>
             <img src={pokeUrl} alt="poke" className={styles.list_img} />
+            <span className={styles.list_wrap}>
+              <h5 className={styles.list_text}>Id: {pokeId}</h5>
+              <h5 className={styles.list_text}>Name : {pokeName}</h5>
+            </span>
           </div>
         </>
       ) : (

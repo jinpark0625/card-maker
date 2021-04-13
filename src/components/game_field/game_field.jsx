@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef } from "react";
 import styles from "./game_field.module.css";
 
 import Item from "../item/item";

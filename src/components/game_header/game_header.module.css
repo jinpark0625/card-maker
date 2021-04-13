@@ -1,20 +1,75 @@
 .game__header {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
   padding: 20px;
+  font-family: "DungGeunMo", sans-serif;
+  position: relative;
 }
 .game__button {
-  width: 60px;
-  height: 60px;
-  border-color: wheat;
-  border: 3px solid black;
+  width: 230px;
+  height: 68px;
+  font-family: "DungGeunMo", sans-serif;
+  position: absolute;
+  top: 6%;
   font-size: 24px;
-  transition: transform 300ms ease-in;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  align-items: center;
+  padding-left: 18px;
   border-radius: 10px;
+  transition: 0.3s transform ease-in-out;
+  background-color: unset;
+  z-index: 3;
+}
+.text {
+  font-family: "DungGeunMo", sans-serif;
+}
+.game__button:hover {
+  transform: scale(1.05);
+}
+.again {
+  width: 80px;
+  height: 80px;
+}
+.frame {
+  width: 240px;
+  position: absolute;
+  height: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+.game__stop {
+  font-family: "DungGeunMo", sans-serif;
+  background-color: unset;
+  font-size: 40px;
+  transition: transform 300ms ease-in;
+  position: relative;
+  color: black;
+  cursor: pointer;
+  margin-top: 7px;
 }
 .game__button:hover {
   transform: scale(1.1);
+}
+.stop_frame {
+  width: 236px;
+  height: 100px;
+  position: absolute;
+  left: -30px;
+  top: -25px;
+  user-select: none;
+  cursor: pointer;
+}
+.score_wrap {
+  display: flex;
+  flex-direction: column;
+  font-size: 38px;
+  align-items: flex-start;
+  position: relative;
+  margin-left: 40px;
 }
 .game__timer {
   visibility: hidden;
@@ -23,27 +78,45 @@
   visibility: hidden;
 }
 .game__timer_show {
-  width: 100px;
-  background-color: white;
-  text-align: center;
-  border: 3px solid black;
-  border-radius: 20px;
-  font-size: 32px;
   margin-top: 8px;
+  margin-left: 30px;
   visibility: visible;
   user-select: none;
   cursor: auto;
 }
 .game__score_show {
+  margin-left: 30px;
+  visibility: visible;
   user-select: none;
   cursor: auto;
-  text-align: center;
-  width: 50px;
-  height: 50px;
-  font-size: 38px;
-  margin-top: 8px;
-  border: 3px solid black;
-  border-radius: 50%;
-  background-color: darksalmon;
-  color: white;
+}
+.score_frame {
+  visibility: hidden;
+}
+.score_frame_show {
+  visibility: visible;
+  width: 280px;
+  height: 100px;
+  position: absolute;
+  user-select: none;
+  cursor: auto;
+}
+.goback {
+  position: absolute;
+  font-family: "DungGeunMo", sans-serif;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  left: 5%;
+  top: 30px;
+  background: unset;
+  transition: 0.3s transform ease-in-out;
+}
+.pokedex {
+  width: 60px;
+  height: 60px;
+}
+.goback:hover {
+  transform: scale(1.1);
 }

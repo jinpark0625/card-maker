@@ -37,9 +37,29 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
 
   return (
     <form className={styles.form}>
+      <img
+        src="/images/ball.png"
+        alt="frame"
+        className={`${styles.ball} ${styles.one}`}
+      />
+      <img
+        src="/images/ball.png"
+        alt="frame"
+        className={`${styles.ball} ${styles.two}`}
+      />
+      <img
+        src="/images/ball.png"
+        alt="frame"
+        className={`${styles.ball} ${styles.three}`}
+      />
+      <img
+        src="/images/ball.png"
+        alt="frame"
+        className={`${styles.ball} ${styles.four}`}
+      />
       <input
         ref={nameRef}
-        className={styles.input}
+        className={`${styles.input} ${styles.borderUp}`}
         type="text"
         name="name"
         value={name}
@@ -47,7 +67,7 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
       />
       <input
         ref={companyRef}
-        className={styles.input}
+        className={`${styles.input} ${styles.borderUp}`}
         type="text"
         name="company"
         value={company}
@@ -55,7 +75,7 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
       />
       <select
         ref={themeRef}
-        className={styles.select}
+        className={`${styles.select} ${styles.border} ${styles.borderUp}`}
         name="theme"
         value={theme}
         onChange={onChange}
@@ -74,7 +94,7 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
       />
       <input
         ref={emailRef}
-        className={styles.input}
+        className={`${styles.input} ${styles.border}`}
         type="text"
         name="email"
         value={email}
@@ -82,7 +102,7 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
       />
       <textarea
         ref={messageRef}
-        className={styles.textarea}
+        className={`${styles.textarea} ${styles.border}`}
         name="message"
         value={message}
         onChange={onChange}

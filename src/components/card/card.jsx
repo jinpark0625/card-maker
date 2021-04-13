@@ -16,6 +16,7 @@ const Card = memo(({ card }) => {
         <p className={styles.email}>{email}</p>
         <p className={styles.message}>{message}</p>
       </div>
+      <img src="images/card.png" alt="profile" className={styles.cardP} />
     </li>
   );
 });

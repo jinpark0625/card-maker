@@ -4,9 +4,10 @@
   display: flex;
   width: 100%;
   flex-wrap: wrap;
-  border-top: 1px solid makerBlack;
-  border-left: 1px solid makerBlack;
+  border: 6px double black;
   margin-bottom: 1em;
+  position: relative;
+  font-family: "DungGeunMo", sans-serif;
 }
 
 .input,
@@ -21,8 +22,16 @@
   border-bottom: 1px solid makerBlack;
   border-right: 1px solid makerBlack;
   background: makerWhite;
+  font-family: "DungGeunMo", sans-serif;
+  line-height: 1.4;
+}
+.border {
+  border-right: 0px;
 }
 
+.borderUp {
+  border-top: 1px solid black;
+}
 .input,
 .select {
   flex: 1 1 30%;
@@ -43,4 +52,27 @@
 
 .textarea {
   flex-basis: 100%;
+}
+
+.ball {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+}
+
+.one {
+  left: -10px;
+  top: -10px;
+}
+.two {
+  right: -10px;
+  top: -10px;
+}
+.three {
+  left: -10px;
+  bottom: -10px;
+}
+.four {
+  right: -10px;
+  bottom: -10px;
 }

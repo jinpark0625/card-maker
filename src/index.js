@@ -8,6 +8,7 @@ import CardRepository from "./service/card_repository";
 import ImageFileInput from "./components/image_file_input/image_file_input";
 import "@fortawesome/fontawesome-free/js/all.js";
 import Pokemon from "./service/pokemon";
+import * as sound from "./service/sound";
 
 const authService = new AuthService();
 const imageUploader = new ImageUploader();
@@ -25,6 +26,7 @@ ReactDOM.render(
       FileInput={FileInput}
       cardRepository={cardRepository}
       pokemon={pokemon}
+      sound={sound}
     />
   </React.StrictMode>,
   document.getElementById("root")

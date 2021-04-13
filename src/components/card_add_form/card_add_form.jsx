@@ -40,23 +40,43 @@ const CardAddForm = memo(({ FileInput, onAdd }) => {
 
   return (
     <form ref={formRef} className={styles.form}>
+      <img
+        src="/images/ball.png"
+        alt="frame"
+        className={`${styles.ball} ${styles.one}`}
+      />
+      <img
+        src="/images/ball.png"
+        alt="frame"
+        className={`${styles.ball} ${styles.two}`}
+      />
+      <img
+        src="/images/ball.png"
+        alt="frame"
+        className={`${styles.ball} ${styles.three}`}
+      />
+      <img
+        src="/images/ball.png"
+        alt="frame"
+        className={`${styles.ball} ${styles.four}`}
+      />
       <input
         ref={nameRef}
-        className={styles.input}
+        className={`${styles.input} ${styles.borderUp}`}
         type="text"
         name="name"
         placeholder="name"
       />
       <input
         ref={companyRef}
-        className={styles.input}
+        className={`${styles.input} ${styles.borderUp}`}
         type="text"
         name="company"
         placeholder="company"
       />
       <select
         ref={themeRef}
-        className={styles.select}
+        className={`${styles.select} ${styles.border} ${styles.borderUp}`}
         name="theme"
         placeholder="theme"
       >
@@ -73,14 +93,14 @@ const CardAddForm = memo(({ FileInput, onAdd }) => {
       />
       <input
         ref={emailRef}
-        className={styles.input}
+        className={`${styles.input} ${styles.border}`}
         type="text"
         name="email"
         placeholder="email"
       />
       <textarea
         ref={messageRef}
-        className={styles.textarea}
+        className={`${styles.textarea} ${styles.border}`}
         name="message"
         placeholder="message"
       />

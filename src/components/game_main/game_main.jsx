@@ -6,18 +6,11 @@ import PopUp from "../popup/popup";
 import GameHeader from "../game_header/game_header";
 import GameField from "../game_field/game_field.jsx";
 
-const GameMain = ({ pokemon }) => {
+const GameMain = ({ pokemon, sound }) => {
   const [gameStatus, setGameStatus] = useState(false);
   const [gameLost, setGameLost] = useState(false);
   const [gameWon, setGameWon] = useState(false);
   const [gameResult, setGameResult] = useState(false);
-  const [gameItemStatus, setGameItemStatus] = useState([
-    { id: 1, name: "pokemon" },
-    { id: 2, name: "rocket" },
-    { id: 3, name: "roy" },
-    { id: 4, name: "rosa" },
-    { id: 5, name: "cat" },
-  ]);
   const [pokeData, setPokeData] = useState(false);
   const [pokeDataLoading, setPokeDataLoading] = useState(false);
 
@@ -25,9 +18,17 @@ const GameMain = ({ pokemon }) => {
   const [timerOn, setTimerOn] = useState(false);
 
   const [pokeCount, setPokeCount] = useState(1);
-  const [score, setScore] = useState(5);
-
   const [gameReset, setGameReset] = useState(0);
+
+  const gameItemStatus = [
+    { id: 1, name: "pokemon" },
+    { id: 2, name: "rocket" },
+    { id: 3, name: "roy" },
+    { id: 4, name: "rosa" },
+    { id: 5, name: "cat" },
+  ];
+
+  const score = 5;
 
   useEffect(() => {
     pokemon
@@ -54,19 +55,29 @@ const GameMain = ({ pokemon }) => {
     };
   }, [timerOn]);
 
+  const stopSound = () => {
+    sound.stopPlayLose();
+    sound.stopPlayWin();
+    sound.stopBackground();
+  };
+
   const gameStart = () => {
     setGameStatus(true);
     setTimerOn(true);
+    sound.playBackground();
   };
 
   const timeOut = () => {
-    console.log(time);
     if (time === 0) {
       gameLose();
     }
   };
 
   const gameRestart = () => {
+    sound.stopPlayLose();
+    sound.stopPlayWin();
+    sound.stopBackground();
+    sound.playBackground();
     setGameReset((current) => current + 1);
     setPokeCount(1);
     setTime(5);
@@ -76,9 +87,12 @@ const GameMain = ({ pokemon }) => {
 
   const gameStop = () => {
     setTimerOn(false);
+    sound.stopBackground();
   };
 
   const gameWin = () => {
+    sound.stopBackground();
+    sound.playWin();
     setTimerOn(false);
     setGameResult(true);
     setGameWon(true);
@@ -86,6 +100,8 @@ const GameMain = ({ pokemon }) => {
   };
 
   const gameLose = () => {
+    sound.stopBackground();
+    sound.playLose();
     setGameLost(true);
     setTimerOn(false);
     setGameResult(true);
@@ -94,7 +110,6 @@ const GameMain = ({ pokemon }) => {
 
   const getScore = () => {
     setPokeCount((pokeCount) => pokeCount + 1);
-    console.log(pokeCount);
     if (pokeCount === score) {
       gameWin();
     }
@@ -109,7 +124,10 @@ const GameMain = ({ pokemon }) => {
               gameStart={gameStart}
               gameStatus={gameStatus}
               time={time}
+              gameLose={gameLose}
+              pokeCount={pokeCount}
               gameStop={gameStop}
+              stopSound={stopSound}
             />
             <GameField
               gameStatus={gameStatus}
