@@ -78,7 +78,7 @@ const CardAddForm = memo(({ FileInput, onAdd }) => {
         ref={themeRef}
         className={`${styles.select} ${styles.border} ${styles.borderUp}`}
         name="theme"
-        placeholder="theme"
+        placeholder="Starter Pokemon"
       >
         <option placeholder="bronze">bronze</option>
         <option placeholder="silver">silver</option>

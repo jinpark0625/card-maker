@@ -37,80 +37,68 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
 
   return (
     <form className={styles.form}>
-      <img
-        src="/images/ball.png"
-        alt="frame"
-        className={`${styles.ball} ${styles.one}`}
-      />
-      <img
-        src="/images/ball.png"
-        alt="frame"
-        className={`${styles.ball} ${styles.two}`}
-      />
-      <img
-        src="/images/ball.png"
-        alt="frame"
-        className={`${styles.ball} ${styles.three}`}
-      />
-      <img
-        src="/images/ball.png"
-        alt="frame"
-        className={`${styles.ball} ${styles.four}`}
-      />
-      <input
-        ref={nameRef}
-        className={`${styles.input} ${styles.borderUp}`}
-        type="text"
-        name="name"
-        value={name}
-        onChange={onChange}
-      />
-      <input
-        ref={companyRef}
-        className={`${styles.input} ${styles.borderUp}`}
-        type="text"
-        name="company"
-        value={company}
-        onChange={onChange}
-      />
-      <select
-        ref={themeRef}
-        className={`${styles.select} ${styles.border} ${styles.borderUp}`}
-        name="theme"
-        value={theme}
-        onChange={onChange}
-      >
-        <option value="bronze">bronze</option>
-        <option value="silver">silver</option>
-        <option value="gold">gold</option>
-      </select>
-      <input
-        ref={titleRef}
-        className={styles.input}
-        type="text"
-        name="title"
-        value={title}
-        onChange={onChange}
-      />
-      <input
-        ref={emailRef}
-        className={`${styles.input} ${styles.border}`}
-        type="text"
-        name="email"
-        value={email}
-        onChange={onChange}
-      />
-      <textarea
-        ref={messageRef}
-        className={`${styles.textarea} ${styles.border}`}
-        name="message"
-        value={message}
-        onChange={onChange}
-      />
-      <div className={styles.fileInput}>
-        <FileInput name={fileName} onFileChange={onFileChange} />
+      <div className={styles.list_wrap}>
+        <input
+          ref={nameRef}
+          className={`${styles.input} ${styles.name}`}
+          type="text"
+          name="name"
+          value={name}
+          onChange={onChange}
+        />
+        <input
+          ref={companyRef}
+          className={`${styles.input} ${styles.company}`}
+          type="text"
+          name="company"
+          value={company}
+          onChange={onChange}
+        />
       </div>
-      <Button name="Delete" onClick={onSubmit} />
+      <div className={styles.list_wrap}>
+        <input
+          ref={titleRef}
+          className={`${styles.input} ${styles.title}`}
+          type="text"
+          name="title"
+          value={title}
+          onChange={onChange}
+        />
+        <input
+          ref={emailRef}
+          className={`${styles.input} ${styles.mail}`}
+          type="text"
+          name="email"
+          value={email}
+          onChange={onChange}
+        />
+      </div>
+      <div className={`${styles.list_wrap} ${styles.height}`}>
+        <textarea
+          ref={messageRef}
+          className={`${styles.textarea}`}
+          name="message"
+          value={message}
+          onChange={onChange}
+        />
+      </div>
+      <div className={`${styles.list_wrap} ${styles.btn_wrap}`}>
+        <select
+          ref={themeRef}
+          className={`${styles.select} ${styles.border} ${styles.borderUp}`}
+          name="theme"
+          value={theme}
+          onChange={onChange}
+        >
+          <option value="charmander">charmander</option>
+          <option value="squirtle">squirtle</option>
+          <option value="bulbasaur">bulbasaur</option>
+        </select>
+        <div className={styles.btns}>
+          <FileInput name={fileName} onFileChange={onFileChange} />
+          <Button name="Delete" onClick={onSubmit} />
+        </div>
+      </div>
     </form>
   );
 };

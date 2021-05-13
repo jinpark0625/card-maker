@@ -4,4 +4,7 @@
 
 .show {
   display: block;
+  position: absolute;
+  right: 25px;
+  fill: #8eb1fe;
 }

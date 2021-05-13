@@ -1,4 +1,4 @@
-@value makerYellow,makerLightGrey, makerPink  from '../../common/colors.css';
+@value makerYellow,makerBgBlue, makerPink  from '../../common/colors.css';
 
 .container {
   width: 100%;
@@ -6,6 +6,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 15px;
 }
 .input {
   display: none;
@@ -20,9 +21,10 @@
   outline: 0;
   font-size: 0.8rem;
   font-family: "DungGeunMo", sans-serif;
+  border-radius: 20px;
 }
 .button.grey {
-  background-color: makerLightGrey;
+  background-color: makerBgBlue;
 }
 .button.pink {
   background-color: makerYellow;

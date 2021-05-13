@@ -11,7 +11,7 @@ const Red = ({ display }) => {
       y="0px"
       viewBox="0 0 24 24"
       width="36"
-      className={display === "bronze" ? styles.show : styles.hide}
+      className={display === "charmander" ? styles.show : styles.hide}
     >
       <g>
         <circle cx="16.5" cy="9" r="1" />

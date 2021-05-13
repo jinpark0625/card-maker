@@ -10,7 +10,7 @@ const Blue = ({ display }) => (
     y="0px"
     viewBox="0 0 24 24"
     width="36"
-    className={display === "silver" ? styles.show : styles.hide}
+    className={display === "squirtle" ? styles.show : styles.hide}
   >
     <g>
       <circle cx="16.5" cy="9" r="1" />

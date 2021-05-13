@@ -11,7 +11,7 @@ const Green = ({ display }) => (
     viewBox="0 0 24 24"
     viewBox="0 0 24 24"
     width="36"
-    className={display === "gold" ? styles.show : styles.hide}
+    className={display === "bulbasaur" ? styles.show : styles.hide}
   >
     <g>
       <circle cx="8.999" cy="16.501" r="1" />

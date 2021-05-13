@@ -1,15 +1,16 @@
-@value makerBlack: black;
 @value makerFontColor: #505050;
 @value makerWhite: white;
-@value makerRed: #d50203;
-@value makerBlue: #2d6fb5;
-@value makerYellow: #ffbf08;
 
 @value makerLightGrey: #e8e7e6;
 @value makerLightPink: #ffeae8;
 @value makerLightYellow: #FFEFD3;
 @value makerLightBlue: #DDF4FF;
 
+@value makerRed: #EB6968;
+@value makerBlue: #8EB1FE;
+@value makerYellow: #FECB81;
+
+@value makerBlack: #414141;
 @value makerBgBlue: #F6F8FC;
 @value makerGrey: #8D8D8D;
 @value makerGreen: #385461;
