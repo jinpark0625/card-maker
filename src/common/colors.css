@@ -10,7 +10,8 @@
 @value makerLightYellow: #FFEFD3;
 @value makerLightBlue: #DDF4FF;
 
-@value makerGrey: #626262;
+@value makerBgBlue: #F6F8FC;
+@value makerGrey: #8D8D8D;
 @value makerGreen: #385461;
 
 @value makerShadow: rgba(217, 217, 217, 1);

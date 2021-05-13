@@ -1,3 +1,5 @@
+@value makerBgBlue from './common/colors.css';
+
 .main {
   height: 100vh;
   overflow-y: hidden;
@@ -5,5 +7,5 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  background: #fff;
+  background: makerBgBlue;
 }

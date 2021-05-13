@@ -1,18 +1,35 @@
-@value makerWheat, makerBlack, makerWhite, makerShadow, makerColorful from '../../common/colors.css';
+@value makerWheat, makerBlack, makerWhite, makerShadow, makerColorful, makerGrey from '../../common/colors.css';
 
 .card {
   display: flex;
   width: 100%;
-  height: 230px;
+  max-width: 444px;
+  height: 257px;
   align-items: center;
+  flex-direction: column;
   margin-bottom: 0.5em;
-  padding: 0.2em 2em;
+  padding: 1.6em 1.6em;
+  box-sizing: border-box;
   border-radius: 1em;
-  background-color: brown;
-  box-shadow: 5px 6px 2px 0px rgb(47 47 47);
-  max-width: 30rem;
+  background-color: #fff;
+  box-shadow: 5px 6px 10px 2px rgb(179 179 179 / 30%);
   z-index: 1;
   position: relative;
+}
+.first_line {
+  display: flex;
+  width: 100%;
+}
+.img_wrap {
+  width: 100px;
+  height: 122px;
+  z-index: 3;
+}
+
+.avatar {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .cardP {
@@ -24,71 +41,39 @@
   z-index: 2;
 }
 
-.card.bronze {
-  background: linear-gradient(
-    45deg,
-    rgba(223, 182, 103, 1) 0%,
-    rgba(249, 243, 232, 1) 56%,
-    rgba(231, 192, 116, 1) 96%
-  );
-  color: makerBlack;
+.icon {
+  display: none;
 }
 
-.card.silver {
-  background: linear-gradient(
-    45deg,
-    rgba(160, 160, 160, 1) 0%,
-    rgba(232, 232, 232, 1) 56%
-  );
-  color: makerBlack;
-}
-
-.card.gold {
-  background: linear-gradient(
-    45deg,
-    rgba(242, 215, 12, 1) 0%,
-    rgba(255, 255, 255, 1) 56%,
-    rgba(252, 235, 0, 1) 96%
-  );
-}
-
-.avatar {
-  width: 10em;
-  height: 10em;
-  padding: 1em;
-  margin-left: 0.5em;
-  margin-right: 1em;
-  border-radius: 50%;
-  z-index: 3;
-}
 .info {
   width: 100%;
   z-index: 3;
+  display: flex;
+  margin-left: 20px;
+  margin-top: 5px;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.name {
+  font-size: 1.75rem;
+  margin-bottom: 10px;
 }
 
-.name,
 .company,
 .title,
-.email,
-.message {
+.email {
   margin: 0;
-  font-size: 0.8rem;
-  margin-bottom: 0.2em;
+  font-size: 0.813rem;
+  color: makerGrey;
+  margin-bottom: 0.2rem;
 }
 
-.name {
-  font-size: 1.2rem;
+.second_line {
+  width: 100%;
+  text-align: left;
+  margin-top: 10px;
 }
-
-.company {
-  margin-bottom: 1em;
-}
-
-.company::after {
-  content: "";
-  display: block;
-  width: 90%;
-  height: 2px;
-  background-color: makerWheat;
-  transform: translateY(0.5em);
+.message {
+  font-size: 1rem;
+  color: #414141;
 }

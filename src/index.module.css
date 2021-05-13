@@ -1,20 +1,46 @@
-@font-face {
+/* @font-face {
   font-family: "DungGeunMo";
   font-style: normal;
   font-weight: normal;
   src: url("font/DungGeunMo.eot") format("embedded-opentype"),
     url("font/DungGeunMo.woff") format("woff"),
     url("font/DungGeunMo.woff2") format("woff2");
+  font-display: fallback;
+} */
+
+@font-face {
+  font-family: "TmoneyRound";
+  font-style: normal;
+  font-weight: normal;
+  src: url("font/01_otf/TmoneyRoundWindRegular.otf") format("opentype"),
+    url("font/02_ttf/TmoneyRoundWindRegular.ttf") format("truetype");
+  font-display: fallback;
+}
+@font-face {
+  font-family: "TmoneyRound";
+  font-style: normal;
+  font-weight: bold;
+  src: url("font/01_otf/TmoneyRoundWindExtraBold.otf") format("opentype"),
+    url("font/02_ttf/TmoneyRoundWindExtraBold.ttf") format("truetype");
+  font-display: fallback;
 }
 
 body {
   margin: 0;
+  height: 100%;
   padding: 0;
-  font-family: "DungGeunMo", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  font-family: "TmoneyRound", -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
     "Helvetica Neue", sans-serif;
+  font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+a:link,
+a:active,
+a:hover {
+  text-decoration: none;
 }
 
 button {

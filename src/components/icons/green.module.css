@@ -1,0 +1,10 @@
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+  position: absolute;
+  right: 25px;
+  fill: #a7ee87;
+}
