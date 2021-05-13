@@ -13,6 +13,8 @@ const Maker = ({ authService, FileInput, cardRepository }) => {
   const [cards, setCards] = useState({});
   const [userId, setUserId] = useState(historyState && historyState.id);
 
+  const [showEdit, setShowEdit] = useState(false);
+
   const onLogout = useCallback(() => {
     authService.logout();
   }, [authService]);
@@ -56,6 +58,15 @@ const Maker = ({ authService, FileInput, cardRepository }) => {
     cardRepository.removeCard(userId, card);
   };
 
+  const showEditor = () => {
+    setShowEdit(true);
+  };
+  const closeEditor = (e) => {
+    console.log(e);
+    // if()
+    // setShowEdit(false);
+  };
+
   return (
     <section className={styles.maker}>
       <Header onLogout={onLogout} />
@@ -66,8 +77,10 @@ const Maker = ({ authService, FileInput, cardRepository }) => {
           addCard={createOrUpdateCard}
           updateCard={createOrUpdateCard}
           deleteCard={deleteCard}
+          showEdit={showEdit}
+          closeEditor={closeEditor}
         />
-        <Preview cards={cards} />
+        <Preview cards={cards} showEditor={showEditor} />
       </div>
       <Footer />
     </section>

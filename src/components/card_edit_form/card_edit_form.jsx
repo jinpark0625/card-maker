@@ -2,7 +2,13 @@ import React, { useRef } from "react";
 import styles from "./card_edit_form.module.css";
 import Button from "../button/button";
 
-const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
+const CardEditForm = ({
+  FileInput,
+  card,
+  updateCard,
+  deleteCard,
+  closeEditor,
+}) => {
   const { name, company, title, email, message, theme, fileName } = card;
 
   const nameRef = useRef();
@@ -37,6 +43,10 @@ const CardEditForm = ({ FileInput, card, updateCard, deleteCard }) => {
 
   return (
     <form className={styles.form}>
+      <button className={styles.close} onClick={closeEditor}>
+        <span className={styles.closeA}></span>
+        <span className={styles.closeB}></span>
+      </button>
       <div className={styles.list_wrap}>
         <input
           ref={nameRef}

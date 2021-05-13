@@ -10,5 +10,12 @@
   width: 100%;
   background-color: rgba(47, 47, 47, 0.67);
   overflow-y: auto;
-  /* display: none; */
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
 }

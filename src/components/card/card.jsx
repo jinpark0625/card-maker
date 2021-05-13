@@ -7,7 +7,7 @@ import Edit from "../icons/edit";
 
 const DEFAULT_IMAGE = "/images/default_logo.png";
 
-const Card = memo(({ card }) => {
+const Card = memo(({ card, showEditor }) => {
   const { name, company, title, email, message, theme, fileURL } = card;
   const url = fileURL || DEFAULT_IMAGE;
 
@@ -25,7 +25,7 @@ const Card = memo(({ card }) => {
         <div className={styles.info}>
           <h1 className={styles.name}>
             {name}
-            <Edit />
+            <Edit showEditor={showEditor} />
           </h1>
           <p className={styles.company}>{company}</p>
           <p className={styles.title}>{title}</p>

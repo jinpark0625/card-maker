@@ -1,4 +1,4 @@
-@value makerBlack,makerBgBlue from '../../common/colors.css';
+@value makerRed,makerBlack,makerBgBlue from '../../common/colors.css';
 
 .form {
   display: flex;
@@ -73,71 +73,36 @@
   justify-content: space-between;
 }
 
-/* .input,
-.textarea,
-.select,
-.button,
-.fileInput {
-  font-size: 0.8rem;
-  width: 100%;
-  border: 0;
-  padding: 0.5em;
-  border-bottom: 1px solid makerBlack;
-  border-right: 1px solid makerBlack;
-  background: makerWhite;
-  font-family: "DungGeunMo", sans-serif;
-  line-height: 1.4;
-}
-
-.border {
-  border-right: 0px;
-}
-
-.borderUp {
-  border-top: 1px solid black;
-}
-
-.input,
-.select {
-  flex: 1 1 30%;
-}
-
-.fileInput {
-  padding: 0;
-  flex: 1 1 50%;
-  border-right: 0;
-}
-
-.input:focus,
-.textarea:focus,
-.select:focus,
-.button:focus {
-  outline: 0;
-}
-
-.textarea {
-  flex-basis: 100%;
-}
-
-.ball {
-  width: 15px;
-  height: 15px;
+.close {
+  width: 30px;
+  height: 30px;
   position: absolute;
+  right: 20px;
+  top: 20px;
+  border-radius: 100%;
+  background-color: makerRed;
 }
-
-.one {
-  left: -10px;
-  top: -10px;
+.closeA {
+  width: 15px;
+  height: 4px;
+  border-radius: 2px;
+  content: "";
+  background-color: #fff;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
 }
-.two {
-  right: -10px;
-  top: -10px;
+.closeB {
+  width: 15px;
+  height: 4px;
+  border-radius: 2px;
+  content: "";
+  background-color: #fff;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
-.three {
-  left: -10px;
-  bottom: -10px;
-}
-.four {
-  right: -10px;
-  bottom: -10px;
-} */
