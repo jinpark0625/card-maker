@@ -1,4 +1,4 @@
-@value makerYellow,makerBgBlue, makerPink  from '../../common/colors.css';
+@value makerYellow,makerBgBlue, makerRed  from '../../common/colors.css';
 
 .container {
   width: 100%;
@@ -36,8 +36,8 @@
   width: 1.4em;
   height: 1.4em;
   border-radius: 50%;
-  border: 3px solid makerLightGrey;
-  border-top: 3px solid makerPink;
+  border: 3px solid #fff;
+  border-top: 3px solid makerRed;
   animation: spin 2s linear infinite;
 }
 

@@ -65,7 +65,8 @@ const Maker = ({ authService, FileInput, cardRepository }) => {
   const showAddEditor = () => {
     setShowAddEdit(true);
   };
-  const closeAddEditor = () => {
+  const closeAddEditor = (e) => {
+    e.preventDefault();
     setShowAddEdit(false);
   };
 

@@ -29,7 +29,7 @@
 
 .addBtn {
   position: fixed;
-  z-index: 9999;
+  z-index: 9998;
   width: 240px;
   height: 64px;
   border-radius: 40px;
@@ -43,12 +43,18 @@
   background-color: #fff;
   outline: none;
   box-shadow: 5px 6px 10px 2px rgb(179 179 179 / 30%);
+  transition: 0.6s ease-in-out;
+  transition-property: bottom, box-shadow;
 }
 .addText {
   margin-left: 10px;
   font-size: 1rem;
   font-family: "TmoneyRound";
   font-weight: bold;
+}
+.addBtn:hover {
+  bottom: 35px;
+  box-shadow: 5px 10px 15px 2px rgb(179 179 179 / 60%);
 }
 
 @media screen and (max-width: mediaQuery) {
