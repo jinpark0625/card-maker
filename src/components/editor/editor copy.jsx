@@ -2,7 +2,6 @@ import React from "react";
 import styles from "./editor.module.css";
 import CardEditForm from "../card_edit_form/card_edit_form";
 import CardAddForm from "../card_add_form/card_add_form";
-import { useState } from "react";
 
 const Editor = ({
   FileInput,
@@ -21,19 +20,7 @@ const Editor = ({
         showEdit || showAddEdit ? styles.show : styles.hide
       }`}
     >
-      {showEdit ? (
-        <CardEditForm
-          FileInput={FileInput}
-          card={cards[String(showEdit)]}
-          updateCard={updateCard}
-          deleteCard={deleteCard}
-          closeEditor={closeEditor}
-          showEdit={showEdit}
-        />
-      ) : (
-        <></>
-      )}
-      {/* {Object.keys(cards).map((key) => (
+      {Object.keys(cards).map((key) => (
         <CardEditForm
           key={key}
           FileInput={FileInput}
@@ -43,7 +30,7 @@ const Editor = ({
           closeEditor={closeEditor}
           showEdit={showEdit}
         />
-      ))} */}
+      ))}
       <CardAddForm
         onAdd={addCard}
         FileInput={FileInput}

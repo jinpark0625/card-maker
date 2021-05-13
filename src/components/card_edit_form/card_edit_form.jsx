@@ -7,8 +7,10 @@ const CardEditForm = ({
   card,
   updateCard,
   deleteCard,
+  showEdit,
   closeEditor,
 }) => {
+  console.log(card);
   const { name, company, title, email, message, theme, fileName } = card;
 
   const nameRef = useRef();
@@ -37,12 +39,13 @@ const CardEditForm = ({
     });
   };
 
-  const onSubmit = () => {
+  const onSubmit = (e) => {
+    e.preventDefault();
     deleteCard(card);
   };
 
   return (
-    <form className={styles.form}>
+    <form className={`${styles.form} ${showEdit ? styles.show : styles.hide}`}>
       <button className={styles.close} onClick={closeEditor}>
         <span className={styles.closeA}></span>
         <span className={styles.closeB}></span>

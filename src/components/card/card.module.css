@@ -15,6 +15,7 @@
   box-shadow: 5px 6px 10px 2px rgb(179 179 179 / 30%);
   z-index: 1;
   position: relative;
+  overflow: hidden;
 }
 .first_line {
   display: flex;
@@ -47,6 +48,8 @@
 
 .info {
   width: 100%;
+  max-width: 200px;
+  overflow: scroll;
   z-index: 3;
   display: flex;
   margin-left: 20px;
@@ -72,6 +75,7 @@
   width: 100%;
   text-align: left;
   margin-top: 10px;
+  overflow: scroll;
 }
 .message {
   font-size: 1rem;

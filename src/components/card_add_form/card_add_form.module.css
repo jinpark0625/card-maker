@@ -1,78 +1,115 @@
-@value makerBlack from '../../common/colors.css';
+@value makerBgBlue,makerRed from '../../common/colors.css';
 
 .form {
-  display: flex;
-  width: 100%;
-  flex-wrap: wrap;
-  border: 6px double black;
-  margin-bottom: 1em;
+  width: 60%;
+  height: 50%;
+  max-height: 659px;
+  max-width: 1109px;
+  padding: 30px 30px;
+  box-sizing: border-box;
   position: relative;
-  font-family: "DungGeunMo", sans-serif;
-}
-
-.input,
-.textarea,
-.select,
-.button,
-.fileInput {
-  font-size: 0.8rem;
-  width: 100%;
-  border: 0;
-  padding: 0.5em;
-  border-bottom: 1px solid makerBlack;
-  border-right: 1px solid makerBlack;
-  background: makerWhite;
-  font-family: "DungGeunMo", sans-serif;
-  line-height: 1.4;
-}
-.border {
-  border-right: 0px;
-}
-
-.borderUp {
-  border-top: 1px solid black;
-}
-.input,
-.select {
-  flex: 1 1 30%;
-}
-
-.fileInput {
-  padding: 0;
-  flex: 1 1 50%;
-  border-right: 0;
-}
-
-.input:focus,
-.textarea:focus,
-.select:focus,
-.button:focus {
-  outline: 0;
-}
-
-.textarea {
-  flex-basis: 100%;
-}
-
-.ball {
-  width: 15px;
-  height: 15px;
   position: absolute;
+  flex-direction: column;
+  align-items: flex-start;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  box-shadow: 5px 6px 10px 2px rgb(179 179 179 / 30%);
+  border-radius: 30px;
+}
+.list_wrap {
+  width: 100%;
+  display: flex;
+  height: 40px;
+  margin-bottom: 18px;
+}
+.input {
+  background-color: makerBgBlue;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  padding: 0 1.5em;
+}
+.name,
+.title {
+  flex-basis: 30%;
+}
+.company,
+.mail {
+  flex-basis: 30%;
+  margin-left: 20px;
+}
+.textarea {
+  width: 100%;
+  height: 100%;
+  background-color: makerBgBlue;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  padding: 1.5em;
+  resize: none;
+  box-sizing: border-box;
+}
+.height {
+  flex: 1 1 35%;
+}
+.select {
+  background-color: makerBgBlue;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  padding: 0 1.5em;
+  flex-basis: 20%;
+}
+.btn_wrap {
+  justify-content: space-between;
+  margin: 0;
+}
+.btns {
+  display: flex;
+  width: 40%;
+  justify-content: space-between;
 }
 
-.one {
-  left: -10px;
-  top: -10px;
+.close {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  border-radius: 100%;
+  background-color: makerRed;
 }
-.two {
-  right: -10px;
-  top: -10px;
+.closeA {
+  width: 15px;
+  height: 4px;
+  border-radius: 2px;
+  content: "";
+  background-color: #fff;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
 }
-.three {
-  left: -10px;
-  bottom: -10px;
+.closeB {
+  width: 15px;
+  height: 4px;
+  border-radius: 2px;
+  content: "";
+  background-color: #fff;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
-.four {
-  right: -10px;
-  bottom: -10px;
+
+.show {
+  display: flex;
+}
+
+.hide {
+  display: none;
 }

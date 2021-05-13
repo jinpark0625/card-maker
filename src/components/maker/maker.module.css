@@ -1,4 +1,5 @@
 @value mediaQuery from '../../common/size.css';
+@value makerRed from '../../common/colors.css';
 
 .maker {
   width: 100%;
@@ -24,6 +25,30 @@
   top: 0;
   cursor: unset;
   user-select: none;
+}
+
+.addBtn {
+  position: fixed;
+  z-index: 9999;
+  width: 240px;
+  height: 64px;
+  border-radius: 40px;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: makerRed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  outline: none;
+  box-shadow: 5px 6px 10px 2px rgb(179 179 179 / 30%);
+}
+.addText {
+  margin-left: 10px;
+  font-size: 1rem;
+  font-family: "TmoneyRound";
+  font-weight: bold;
 }
 
 @media screen and (max-width: mediaQuery) {

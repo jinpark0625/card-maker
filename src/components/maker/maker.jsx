@@ -4,6 +4,7 @@ import Footer from "../footer/footer";
 import Editor from "../editor/editor";
 import Preview from "../preview/preview";
 import styles from "./maker.module.css";
+import Add from "../icons/add";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const Maker = ({ authService, FileInput, cardRepository }) => {
@@ -13,6 +14,7 @@ const Maker = ({ authService, FileInput, cardRepository }) => {
   const [cards, setCards] = useState({});
   const [userId, setUserId] = useState(historyState && historyState.id);
 
+  const [showAddEdit, setShowAddEdit] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
 
   const onLogout = useCallback(() => {
@@ -47,6 +49,7 @@ const Maker = ({ authService, FileInput, cardRepository }) => {
       return updated;
     });
     cardRepository.saveCard(userId, card);
+    setShowAddEdit(false);
   };
 
   const deleteCard = (card) => {
@@ -56,15 +59,21 @@ const Maker = ({ authService, FileInput, cardRepository }) => {
       return updated;
     });
     cardRepository.removeCard(userId, card);
+    setShowEdit(false);
   };
 
-  const showEditor = () => {
-    setShowEdit(true);
+  const showAddEditor = () => {
+    setShowAddEdit(true);
+  };
+  const closeAddEditor = () => {
+    setShowAddEdit(false);
+  };
+
+  const showEditor = (id) => {
+    setShowEdit(id);
   };
   const closeEditor = (e) => {
-    console.log(e);
-    // if()
-    // setShowEdit(false);
+    setShowEdit(false);
   };
 
   return (
@@ -79,9 +88,15 @@ const Maker = ({ authService, FileInput, cardRepository }) => {
           deleteCard={deleteCard}
           showEdit={showEdit}
           closeEditor={closeEditor}
+          showAddEdit={showAddEdit}
+          closeAddEditor={closeAddEditor}
         />
         <Preview cards={cards} showEditor={showEditor} />
       </div>
+      <button className={styles.addBtn} onClick={showAddEditor}>
+        <Add />
+        <span className={styles.addText}>Add New Trainer!</span>
+      </button>
       <Footer />
     </section>
   );
