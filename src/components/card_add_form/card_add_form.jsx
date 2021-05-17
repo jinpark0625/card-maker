@@ -91,10 +91,11 @@ const CardAddForm = memo(
         <div className={`${styles.list_wrap} ${styles.btn_wrap}`}>
           <select
             ref={themeRef}
-            className={`${styles.select} ${styles.border} ${styles.borderUp}`}
+            className={`${styles.select}`}
             name="theme"
             placeholder="Starter Pokemon"
           >
+            <option value="">Choose Starter Pokemon!</option>
             <option value="charmander">charmander</option>
             <option value="squirtle">squirtle</option>
             <option value="bulbasaur">bulbasaur</option>

@@ -17,9 +17,9 @@ const Maker = ({ authService, FileInput, cardRepository }) => {
   const [showAddEdit, setShowAddEdit] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
 
-  const onLogout = useCallback(() => {
-    authService.logout();
-  }, [authService]);
+  // const onLogout = useCallback(() => {
+  //   authService.logout();
+  // }, [authService]);
 
   useEffect(() => {
     if (!userId) {
@@ -79,7 +79,8 @@ const Maker = ({ authService, FileInput, cardRepository }) => {
 
   return (
     <section className={styles.maker}>
-      <Header onLogout={onLogout} />
+      <img src="./images/pokeballbg.png" alt="bg" className={styles.bg_img} />
+      {/* <Header onLogout={onLogout} /> */}
       <div className={styles.container}>
         <Editor
           FileInput={FileInput}

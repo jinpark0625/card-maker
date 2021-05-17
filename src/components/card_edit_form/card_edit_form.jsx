@@ -10,7 +10,6 @@ const CardEditForm = ({
   showEdit,
   closeEditor,
 }) => {
-  console.log(card);
   const { name, company, title, email, message, theme, fileName } = card;
 
   const nameRef = useRef();

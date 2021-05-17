@@ -7,7 +7,7 @@ li {
   width: 100%;
   height: 64px;
   padding: 35px 0 0 0;
-  position: relative;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,6 +40,15 @@ li {
   font-size: 1.25rem;
   font-weight: bold;
   color: makerGrey;
+  transition: color 0.3s ease-in-out;
+}
+
+.list_text:hover {
+  color: makerRed;
+}
+
+.active {
+  color: makerRed;
 }
 
 .logo {

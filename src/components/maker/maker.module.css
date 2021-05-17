@@ -3,7 +3,6 @@
 
 .maker {
   width: 100%;
-  max-width: 1400px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -14,6 +13,7 @@
   flex: 1;
   display: flex;
   min-height: 0;
+  justify-content: center;
 }
 .bg {
   width: 100vw;
@@ -25,6 +25,15 @@
   top: 0;
   cursor: unset;
   user-select: none;
+}
+.bg_img {
+  position: absolute;
+  width: 500px;
+  top: -150px;
+  left: -150px;
+  mix-blend-mode: hard-light;
+  opacity: 0.05;
+  transform: rotate(333deg);
 }
 
 .addBtn {
