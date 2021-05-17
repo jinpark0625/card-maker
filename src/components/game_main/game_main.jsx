@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import styles from "./game_main.module.css";
 
 import PopUp from "../popup/popup";
-
 import GameHeader from "../game_header/game_header";
 import GameField from "../game_field/game_field.jsx";
 

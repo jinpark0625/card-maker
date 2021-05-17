@@ -66,8 +66,32 @@
   box-shadow: 5px 10px 15px 2px rgb(179 179 179 / 60%);
 }
 
+.addIcon {
+  width: 40px;
+  fill: #eb6968;
+}
+
 @media screen and (max-width: mediaQuery) {
   .container {
     flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .addBtn {
+    width: 185px;
+    height: 48px;
+    position: sticky;
+  }
+  .addText {
+    font-size: 0.813rem;
+  }
+  .addIcon {
+    width: 20px;
+  }
+  .bg_img {
+    width: 300px;
+    top: -67px;
+    left: -61px;
   }
 }

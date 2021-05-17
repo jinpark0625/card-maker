@@ -11,6 +11,7 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
+  top: 0;
 }
 
 .header_wrap {
@@ -58,6 +59,11 @@ li {
   fill: makerRed;
 }
 
+.inActive {
+  color: makerGrey;
+  fill: makerGrey;
+}
+
 .active {
   color: makerRed;
   fill: makerRed;
@@ -70,4 +76,83 @@ li {
 .title {
   margin: 0;
   color: makerWhite;
+}
+
+@media screen and (max-width: 1024px) {
+  .header_wrap {
+    max-width: 600px;
+    padding: 0 35px;
+  }
+  .icon {
+    width: 28px;
+  }
+  .list_text {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header_wrap {
+    max-width: 500px;
+    padding: 0 25px;
+  }
+  .icon {
+    width: 24px;
+  }
+  .list_text {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header_wrap {
+    max-width: unset;
+    width: 80%;
+    padding: 0 15px;
+  }
+  .icon {
+    width: 17px;
+  }
+  .list_text {
+    font-size: 0.9rem;
+    margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    height: 100%;
+    padding: 0;
+    align-items: flex-start;
+  }
+  .header_wrap {
+    position: sticky;
+    top: 0;
+    right: 0;
+    width: 100%;
+    padding: 0 20px;
+    border-radius: unset;
+  }
+  .icon {
+    width: 18px;
+  }
+  .list_text {
+    font-size: 0.9rem;
+    margin-left: 9px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .header_wrap {
+    width: 100%;
+    padding: 0 13px;
+    border-radius: unset;
+  }
+  .icon {
+    width: 16px;
+  }
+  .list_text {
+    font-size: 0.813rem;
+    margin-left: 7px;
+  }
 }

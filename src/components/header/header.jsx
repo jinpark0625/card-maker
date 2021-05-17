@@ -1,41 +1,81 @@
-import React, { memo } from "react";
+import React, { memo, useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./header.module.css";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useHistory } from "react-router-dom/cjs/react-router-dom";
 
 const Header = memo(({ onLogout }) => {
-  const history = useHistory();
-
+  const [login, setLogin] = useState(false);
   const [maker, setMaker] = useState(false);
   const [game, setGame] = useState(false);
   const [pokedex, setPokedex] = useState(false);
 
+  const history = useHistory();
+  const historyState = history?.location?.pathname;
+
   useEffect(() => {
-    const historyState = history?.location?.pathname;
     switch (historyState) {
+      case "/":
+        setLogin(true);
+        setMaker(false);
+        setGame(false);
+        setPokedex(false);
+        break;
       case "/maker":
+        setLogin(false);
         setMaker(true);
         setGame(false);
         setPokedex(false);
         break;
       case "/pokedex":
-        setMaker(false);
-        setGame(true);
-        setPokedex(false);
-        break;
-      case "/game":
+        setLogin(false);
         setMaker(false);
         setGame(false);
         setPokedex(true);
         break;
+      case "/game":
+        setLogin(false);
+        setMaker(false);
+        setGame(true);
+        setPokedex(false);
+        break;
+      default:
+        break;
     }
-  });
+    return history.listen((location) => {
+      switch (location?.pathname) {
+        case "/":
+          setLogin(true);
+          setMaker(false);
+          setGame(false);
+          setPokedex(false);
+          break;
+        case "/maker":
+          setLogin(false);
+          setMaker(true);
+          setGame(false);
+          setPokedex(false);
+          break;
+        case "/pokedex":
+          setLogin(false);
+          setMaker(false);
+          setGame(false);
+          setPokedex(true);
+          break;
+        case "/game":
+          setLogin(false);
+          setMaker(false);
+          setGame(true);
+          setPokedex(false);
+          break;
+        default:
+          break;
+      }
+    });
+  }, [history, historyState]);
 
   return (
     <header className={styles.header}>
-      {onLogout && (
+      {!login && (
         <ul className={styles.header_wrap}>
           <li className={styles.list}>
             <NavLink to="/maker" className={styles.list_link}>
@@ -53,13 +93,17 @@ const Header = memo(({ onLogout }) => {
                   <path d="M50,60c-4.6,0-8.5-3.2-9.7-7.4c-17.2,0.3-32.5,1.3-35,3.1C8.2,77.8,27.1,95,50,95c22.9,0,41.8-17.1,44.6-39.3   c-2.5-1.8-17.7-2.8-35-3.1C58.5,56.9,54.6,60,50,60z" />
                 </g>
               </svg>
-              <span className={`${styles.list_text} ${maker && styles.active}`}>
+              <span
+                className={`${styles.list_text} ${
+                  maker ? styles.active : styles.inActive
+                }`}
+              >
                 Home
               </span>
             </NavLink>
           </li>
           <li className={styles.list}>
-            <NavLink to="/game" className={styles.list_link}>
+            <NavLink to="/pokedex" className={styles.list_link}>
               <svg
                 id="Layer_1"
                 version="1.1"
@@ -72,7 +116,13 @@ const Header = memo(({ onLogout }) => {
               >
                 <path d="M19.5,0h-15C4.2236328,0,4,0.2236328,4,0.5v23C4,23.7763672,4.2236328,24,4.5,24h15  c0.2763672,0,0.5-0.2236328,0.5-0.5v-23C20,0.2236328,19.7763672,0,19.5,0z M19,7v1h-1v12h1v1h-1v2h-1V5h-2.2573242  c-0.6674805,0-1.2954102,0.2597656-1.7680664,0.7324219l-1.2421875,1.2421875C11.0708008,7.6357422,10.1918945,8,9.2573242,8H5V7  h4.2573242c0.6674805,0,1.2954102-0.2597656,1.7680664-0.7324219l1.2421875-1.2421875  C12.9291992,4.3642578,13.8081055,4,14.7426758,4H19v1h-1v2H19z M6,15.5v-2c0-0.2021484,0.121582-0.3847656,0.3085938-0.4619141  c0.1875-0.0751953,0.4018555-0.0351563,0.5449219,0.1083984l1,1c0.1953125,0.1953125,0.1953125,0.5117188,0,0.7070313l-1,1  C6.7578125,15.9492188,6.6298828,16,6.5,16c-0.0644531,0-0.1293945-0.0126953-0.1914063-0.0380859  C6.121582,15.8847656,6,15.7021484,6,15.5z M9,21.5C9,21.2236328,9.2236328,21,9.5,21h5c0.2763672,0,0.5,0.2236328,0.5,0.5  S14.7763672,22,14.5,22h-5C9.2236328,22,9,21.7763672,9,21.5z M16,2.5C16,2.776123,15.776123,3,15.5,3S15,2.776123,15,2.5  C15,2.2238159,15.223877,2,15.5,2S16,2.2238159,16,2.5z M14,2.5C14,2.776123,13.776123,3,13.5,3S13,2.776123,13,2.5  C13,2.2238159,13.223877,2,13.5,2S14,2.2238159,14,2.5z M12,2.5C12,2.776123,11.776123,3,11.5,3S11,2.776123,11,2.5  C11,2.2238159,11.223877,2,11.5,2S12,2.2238159,12,2.5z M10,4c0,1.1025391-0.8969727,2-2,2S6,5.1025391,6,4s0.8969727-2,2-2  S10,2.8974609,10,4z" />
               </svg>
-              <span className={styles.list_text}>Pokedex</span>
+              <span
+                className={`${styles.list_text} ${
+                  pokedex ? styles.active : styles.inActive
+                }`}
+              >
+                Pokedex
+              </span>
             </NavLink>
           </li>
           <li className={styles.list}>
@@ -85,7 +135,7 @@ const Header = memo(({ onLogout }) => {
                 viewBox="0 0 477.518 477.518"
                 width="36"
                 className={`${styles.icon} ${
-                  pokedex ? styles.active : styles.inActive
+                  game ? styles.active : styles.inActive
                 }`}
               >
                 <path
@@ -112,7 +162,13 @@ const Header = memo(({ onLogout }) => {
 	C410.499,209.771,404.107,216.195,396.191,216.195z"
                 />
               </svg>
-              <span className={styles.list_text}>Game</span>
+              <span
+                className={`${styles.list_text} ${
+                  game ? styles.active : styles.inActive
+                }`}
+              >
+                Game
+              </span>
             </NavLink>
           </li>
           <li className={styles.list}>
@@ -125,9 +181,7 @@ const Header = memo(({ onLogout }) => {
                 y="0px"
                 viewBox="0 0 24 24"
                 width="36"
-                className={`${styles.icon} ${
-                  pokedex ? styles.active : styles.inActive
-                }`}
+                className={`${styles.icon}`}
               >
                 <path
                   d="M21.234,16.404c-1.032-1.527-4.91-3.329-8.469-3.935c-0.02-0.004-0.429-0.071-1.059-0.155
