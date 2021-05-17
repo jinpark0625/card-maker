@@ -43,12 +43,24 @@ li {
   transition: color 0.3s ease-in-out;
 }
 
-.list_text:hover {
+.icon {
+  fill: makerGrey;
+  transition: fill 0.3s ease-in-out;
+}
+
+.icon:hover {
+  fill: makerRed;
+}
+
+.list:hover .list_text,
+.list:hover .icon {
   color: makerRed;
+  fill: makerRed;
 }
 
 .active {
   color: makerRed;
+  fill: makerRed;
 }
 
 .logo {

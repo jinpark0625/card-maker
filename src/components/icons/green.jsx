@@ -9,7 +9,6 @@ const Green = ({ display }) => (
     x="0px"
     y="0px"
     viewBox="0 0 24 24"
-    viewBox="0 0 24 24"
     width="36"
     className={display === "bulbasaur" ? styles.show : styles.hide}
   >

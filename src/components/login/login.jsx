@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import Footer from "../footer/footer";
-import Header from "../header/header";
 import styles from "./login.module.css";
 import { useHistory } from "react-router-dom/cjs/react-router-dom";
 
@@ -29,7 +28,6 @@ const Login = ({ authService }) => {
   };
   return (
     <section className={styles.login}>
-      <Header />
       <figure>
         <img src="/images/main.gif" alt="pokeBg" />
       </figure>
@@ -56,7 +54,6 @@ const Login = ({ authService }) => {
         </ul>
       </section>
       <Footer />
-      {/* <img className={styles.background} src="/images/pokebg.png" alt="" /> */}
     </section>
   );
 };
