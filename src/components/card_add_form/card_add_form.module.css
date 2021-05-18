@@ -7,7 +7,6 @@
   max-width: 1109px;
   padding: 30px 30px;
   box-sizing: border-box;
-  position: relative;
   position: absolute;
   flex-direction: column;
   align-items: flex-start;
@@ -55,11 +54,12 @@
   flex: 1 1 35%;
 }
 .select {
+  background-color: makerBgBlue;
   border: none;
   outline: none;
   border-radius: 20px;
   padding: 0 1.5em;
-  flex-basis: 22%;
+  flex-basis: 20%;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -76,7 +76,6 @@
 .select::-ms-expand {
   display: none;
 }
-
 .btn_wrap {
   justify-content: space-between;
   margin: 0;
@@ -127,4 +126,57 @@
 
 .hide {
   display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .form {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .form {
+    width: 90%;
+    margin: unset;
+    height: 70vh;
+    max-height: unset;
+    box-sizing: border-box;
+  }
+  .select {
+    flex-basis: 50%;
+    font-size: 0.813rem;
+  }
+}
+
+@media screen and (max-width: 515px) {
+  .list_m {
+    height: 100px;
+    flex-wrap: wrap;
+  }
+  .name,
+  .title {
+    flex-basis: 60%;
+  }
+  .company,
+  .mail {
+    flex-basis: 60%;
+    margin: 20px 0 0 0;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .btn_wrap {
+    height: 100px;
+    flex-direction: column;
+  }
+  .btns {
+    margin-top: 20px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .btns {
+    margin-top: 10px;
+  }
 }

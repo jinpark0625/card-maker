@@ -6,5 +6,12 @@
   display: block;
   position: absolute;
   right: 25px;
+  width: 36px;
   fill: #a7ee87;
+}
+
+@media screen and (max-width: 480px) {
+  .show {
+    width: 28px;
+  }
 }

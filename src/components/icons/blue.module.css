@@ -7,4 +7,11 @@
   position: absolute;
   right: 25px;
   fill: #8eb1fe;
+  width: 36px;
+}
+
+@media screen and (max-width: 480px) {
+  .show {
+    width: 28px;
+  }
 }

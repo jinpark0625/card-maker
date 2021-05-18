@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import Footer from "../footer/footer";
 import styles from "./login.module.css";
 import { useHistory } from "react-router-dom/cjs/react-router-dom";
 
@@ -53,7 +52,6 @@ const Login = ({ authService }) => {
           </li>
         </ul>
       </section>
-      <Footer />
     </section>
   );
 };

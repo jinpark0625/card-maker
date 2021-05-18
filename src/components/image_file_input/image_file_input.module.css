@@ -50,3 +50,9 @@
     transform: rotate(360deg);
   }
 }
+
+@media screen and (max-width: 600px) {
+  .button {
+    font-size: 0.813rem;
+  }
+}

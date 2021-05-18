@@ -13,34 +13,37 @@ const Header = memo(({ onLogout }) => {
   const historyState = history?.location?.pathname;
 
   useEffect(() => {
-    switch (historyState) {
-      case "/":
-        setLogin(true);
-        setMaker(false);
-        setGame(false);
-        setPokedex(false);
-        break;
-      case "/maker":
-        setLogin(false);
-        setMaker(true);
-        setGame(false);
-        setPokedex(false);
-        break;
-      case "/pokedex":
-        setLogin(false);
-        setMaker(false);
-        setGame(false);
-        setPokedex(true);
-        break;
-      case "/game":
-        setLogin(false);
-        setMaker(false);
-        setGame(true);
-        setPokedex(false);
-        break;
-      default:
-        break;
-    }
+    const historyCheck = () => {
+      switch (historyState) {
+        case "/":
+          setLogin(true);
+          setMaker(false);
+          setGame(false);
+          setPokedex(false);
+          break;
+        case "/maker":
+          setLogin(false);
+          setMaker(true);
+          setGame(false);
+          setPokedex(false);
+          break;
+        case "/pokedex":
+          setLogin(false);
+          setMaker(false);
+          setGame(false);
+          setPokedex(true);
+          break;
+        case "/game":
+          setLogin(false);
+          setMaker(false);
+          setGame(true);
+          setPokedex(false);
+          break;
+        default:
+          break;
+      }
+    };
+    historyCheck();
     return history.listen((location) => {
       switch (location?.pathname) {
         case "/":

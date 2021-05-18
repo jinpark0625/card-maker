@@ -10,7 +10,6 @@ const Red = ({ display }) => {
       x="0px"
       y="0px"
       viewBox="0 0 24 24"
-      width="36"
       className={display === "charmander" ? styles.show : styles.hide}
     >
       <g>

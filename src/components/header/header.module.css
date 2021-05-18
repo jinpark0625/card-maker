@@ -105,21 +105,6 @@ li {
 }
 
 @media screen and (max-width: 600px) {
-  .header_wrap {
-    max-width: unset;
-    width: 80%;
-    padding: 0 15px;
-  }
-  .icon {
-    width: 17px;
-  }
-  .list_text {
-    font-size: 0.9rem;
-    margin-left: 10px;
-  }
-}
-
-@media screen and (max-width: 480px) {
   .header {
     height: 100%;
     padding: 0;
@@ -132,7 +117,18 @@ li {
     width: 100%;
     padding: 0 20px;
     border-radius: unset;
+    max-width: unset;
   }
+  .icon {
+    width: 22px;
+  }
+  .list_text {
+    font-size: 1.1rem;
+    margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
   .icon {
     width: 18px;
   }

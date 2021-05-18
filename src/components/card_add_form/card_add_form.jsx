@@ -48,7 +48,7 @@ const CardAddForm = memo(
           <span className={styles.closeA}></span>
           <span className={styles.closeB}></span>
         </button>
-        <div className={styles.list_wrap}>
+        <div className={`${styles.list_wrap} ${styles.list_m}`}>
           <input
             ref={nameRef}
             className={`${styles.input} ${styles.name}`}
@@ -64,7 +64,7 @@ const CardAddForm = memo(
             placeholder="company"
           />
         </div>
-        <div className={styles.list_wrap}>
+        <div className={`${styles.list_wrap} ${styles.list_m}`}>
           <input
             ref={titleRef}
             className={`${styles.input} ${styles.title}`}
