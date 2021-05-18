@@ -71,7 +71,7 @@
 #### 7. 실행코드
 [라이브주소](https://6075847585f083be93cf78dc--pokemon-trainer.netlify.app/)
 
-#### 8. v2.0
+#### 8. v2.0 수정중...
 ![pokemon_v2](https://user-images.githubusercontent.com/69961780/118618892-0a29ff00-b7ff-11eb-8372-4a8f468ce55f.gif)
 
 
