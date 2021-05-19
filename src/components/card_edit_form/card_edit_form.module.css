@@ -180,4 +180,17 @@
   .btns {
     margin-top: 10px;
   }
+  .close {
+    width: 25px;
+    height: 25px;
+  }
+  .closeA,
+  .closeB {
+    width: 13px;
+    height: 3px;
+  }
+  .select {
+    background-position: calc(100% - 20px) calc(1em - 1px),
+      calc(100% - 13px) calc(1em - 1px), calc(100% - 0.5em) 0.5em;
+  }
 }

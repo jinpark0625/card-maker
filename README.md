@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# Pokemon Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### 1. 프로젝트명
 
-## Available Scripts
+    - Pokemon Project
+    
+#### 2. 프로젝트 소개
 
-In the project directory, you can run:
+    - firebase, cloudinary, 포켓몬 API를 이용하여, 사용자(포켓몬 트레이너)를 등록할수있으며,
+      로켓단으로부터 다양한 포켓몬을 구할수있는 게임을 즐길수있는 앱입니다.
 
-### `yarn start`
+#### 3. 구현 플랫폼 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+    1) OS
+        - windows, macOS, Linux에서 모두 동작 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+    2) Front-end 기술 및 라이브러리  
+        - HTML5, CSS3, JavaScript ES6, React 으로 구현 
 
-### `yarn test`
+    3) Back-end 라이브러리 및 API
+        - firebase, cloudinary
+        - pokeAPI
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    4) Code Editor
+        - Visual Studio Code 1.41
 
-### `yarn build`
+#### 4. 정보 구조 (IA) 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    1) Home
+        - login
+    2) Preview
+        - cardMaker
+    3) Game
+        - game
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### 5. 디렉토리 설정
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    1)public
+        - index.html
+        - favicon.ico
+        - image
+        - sound
 
-### `yarn eject`
+    2)src
+        - index.js
+        - App.jsx
+        - app.css
+        - components
+            - button
+            - card
+            - card_add_form
+            - card_edit_form
+            - editor
+            - footer
+            - game_field
+            - game_header
+            - game_main
+            - header
+            - image_file_input
+            - item
+            - login
+            - maker
+            - popup
+            - preview
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### 6. 메인 화면
+![pokemon1](https://user-images.githubusercontent.com/69961780/117792189-05f16500-b286-11eb-8337-6ca09269dd45.gif)
+![pokemon2](https://user-images.githubusercontent.com/69961780/117792193-07bb2880-b286-11eb-8eed-f429319e3426.gif)
+![pokemon3](https://user-images.githubusercontent.com/69961780/117792198-0984ec00-b286-11eb-9117-ed6780d52670.gif)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### 7. 실행코드
+[라이브주소](https://6075847585f083be93cf78dc--pokemon-trainer.netlify.app/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### 8. v2.0 수정중...
+![pokemon_v2](https://user-images.githubusercontent.com/69961780/118618892-0a29ff00-b7ff-11eb-8372-4a8f468ce55f.gif)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

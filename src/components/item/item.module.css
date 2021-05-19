@@ -5,7 +5,7 @@
   height: 120px;
   clip-path: circle(44%);
   cursor: pointer;
-  position: absolute;
+  position: fixed;
   transition: 0.3s transform ease-in-out;
   pointer-events: all;
 }
@@ -15,14 +15,14 @@
   pointer-events: none;
   clip-path: circle(44%);
   cursor: pointer;
-  position: absolute;
+  position: fixed;
   transition: 0.3s transform ease-in-out;
 }
 .roy {
   width: 60px;
   height: 80px;
   cursor: pointer;
-  position: absolute;
+  position: fixed;
   transition: 0.3s transform ease-in-out;
 }
 .pokemon:hover,
@@ -30,27 +30,17 @@
   transform: scale(1.1);
 }
 .list {
-  width: 150px;
-  height: 150px;
-  font-family: "DungGeunMo", sans-serif;
-  line-height: 1.3;
   font-size: 20px;
-  margin-top: 20px;
-  margin-right: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 .list_img {
-  width: 72px;
-  height: 72px;
+  width: 60px;
+  height: 60px;
   margin-bottom: 5px;
-}
-.list_wrap {
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
 }
 .list_text {
   color: makerFontColor;
+  font-size: 0.813rem;
 }

@@ -1,33 +1,48 @@
+@value makerRed from '../../common/colors.css';
+
 .game__header {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  font-family: "DungGeunMo", sans-serif;
-  position: relative;
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
 .game__button {
-  width: 230px;
-  height: 68px;
-  font-family: "DungGeunMo", sans-serif;
   position: absolute;
-  top: 6%;
+  bottom: 35px;
+  width: 64px;
+  height: 64px;
+  background-color: makerRed;
+  color: #fff;
   font-size: 24px;
   display: flex;
   justify-content: center;
   cursor: pointer;
   align-items: center;
-  padding-left: 18px;
-  border-radius: 10px;
+  border-radius: 100%;
   transition: 0.3s transform ease-in-out;
-  background-color: unset;
-  z-index: 3;
+  box-shadow: 5px 6px 10px 2px rgb(25 25 25 / 30%);
 }
-.text {
-  font-family: "DungGeunMo", sans-serif;
+.game__stop {
+  position: absolute;
+  bottom: 35px;
+  width: 64px;
+  height: 64px;
+  background-color: makerRed;
+  color: #fff;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  align-items: center;
+  border-radius: 100%;
+  transition: 0.3s transform ease-in-out;
+  box-shadow: 5px 6px 10px 2px rgb(25 25 25 / 30%);
 }
-.game__button:hover {
-  transform: scale(1.05);
+.game__button:hover,
+.game__stop:hover {
+  transform: scale(1.1);
 }
 .again {
   width: 80px;
@@ -41,19 +56,7 @@
   transform: translateX(-50%);
   cursor: pointer;
 }
-.game__stop {
-  font-family: "DungGeunMo", sans-serif;
-  background-color: unset;
-  font-size: 40px;
-  transition: transform 300ms ease-in;
-  position: relative;
-  color: black;
-  cursor: pointer;
-  margin-top: 7px;
-}
-.game__button:hover {
-  transform: scale(1.1);
-}
+
 .stop_frame {
   width: 236px;
   height: 100px;
@@ -65,9 +68,8 @@
 }
 .score_wrap {
   display: flex;
-  flex-direction: column;
-  font-size: 38px;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   position: relative;
   margin-left: 40px;
 }
@@ -78,11 +80,18 @@
   visibility: hidden;
 }
 .game__timer_show {
-  margin-top: 8px;
-  margin-left: 30px;
-  visibility: visible;
-  user-select: none;
-  cursor: auto;
+  position: absolute;
+  top: 140px;
+  width: 200px;
+  height: 64px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: makerRed;
+  font-size: 26px;
+  font-weight: bold;
 }
 .game__score_show {
   margin-left: 30px;
@@ -103,7 +112,6 @@
 }
 .goback {
   position: absolute;
-  font-family: "DungGeunMo", sans-serif;
   font-size: 20px;
   display: flex;
   flex-direction: column;
@@ -119,4 +127,10 @@
 }
 .goback:hover {
   transform: scale(1.1);
+}
+
+.time_icon {
+  font-size: 40px;
+  color: makerRed;
+  margin-right: 20px;
 }

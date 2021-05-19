@@ -1,7 +1,8 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import styles from "./game_field.module.css";
 
 import Item from "../item/item";
+import { useState } from "react";
 
 const GameField = ({
   gameStatus,
@@ -15,16 +16,16 @@ const GameField = ({
   const fieldRef = useRef();
 
   return (
-    <section ref={fieldRef} className={styles.game__field}>
-      <div className={styles.items_wrap}>
-        <img
-          ref={wrapRef}
-          src="./images/background.png"
-          alt="bg"
-          className={styles.bg}
-        />
-        {gameStatus &&
-          gameItemStatus.map((item, index) => (
+    <section ref={fieldRef} className={styles.items_wrap}>
+      <img
+        ref={wrapRef}
+        src="./images/gameBg.png"
+        alt="bg"
+        className={styles.bg}
+      />
+      {gameStatus && (
+        <div className={styles.list_wrap}>
+          {gameItemStatus.map((item, index) => (
             <Item
               key={index}
               pokeData={pokeData}
@@ -35,7 +36,8 @@ const GameField = ({
               gameLose={gameLose}
             />
           ))}
-      </div>
+        </div>
+      )}
     </section>
   );
 };

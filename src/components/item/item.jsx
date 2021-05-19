@@ -18,7 +18,7 @@ const Item = ({ item, pokeData, wrapRef, getScore, gameReset, gameLose }) => {
   const randomPlace = (pokeMonRef, rocketRef) => {
     const field = wrapRef.current.getBoundingClientRect();
     const x1 = 0;
-    const y1 = 0;
+    const y1 = 100;
     const x2 = field.width - pokeMonRef.current.width;
     const y2 = field.height - pokeMonRef.current.height;
     const x3 = field.width - rocketRef.current.width;
@@ -41,9 +41,9 @@ const Item = ({ item, pokeData, wrapRef, getScore, gameReset, gameLose }) => {
     const randomId = Math.floor(Math.random() * 151) + 1;
 
     randomPlace(pokeMonRef, rocketRef);
-    setPokeUrl(pokeData[randomId].data.sprites.front_default);
-    setPokeName(pokeData[randomId].data.name);
-    setPokeId(pokeData[randomId].data.id);
+    setPokeUrl(pokeData[randomId]?.data.sprites?.front_default);
+    setPokeName(pokeData[randomId]?.data?.name);
+    setPokeId(pokeData[randomId]?.data?.id);
 
     setRocketUrl(`/images/rocket${randomIdR}.png`);
   }, [pokeData, gameReset]);
@@ -75,10 +75,6 @@ const Item = ({ item, pokeData, wrapRef, getScore, gameReset, gameLose }) => {
           />
           <div className={styles.list}>
             <img src={pokeUrl} alt="poke" className={styles.list_img} />
-            <span className={styles.list_wrap}>
-              <h5 className={styles.list_text}>Id: {pokeId}</h5>
-              <h5 className={styles.list_text}>Name : {pokeName}</h5>
-            </span>
           </div>
         </>
       ) : (

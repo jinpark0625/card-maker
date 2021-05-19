@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import styles from "./game_main.module.css";
-
 import PopUp from "../popup/popup";
 import GameHeader from "../game_header/game_header";
 import GameField from "../game_field/game_field.jsx";
@@ -13,7 +12,7 @@ const GameMain = ({ pokemon, sound }) => {
   const [pokeData, setPokeData] = useState(false);
   const [pokeDataLoading, setPokeDataLoading] = useState(false);
 
-  const [time, setTime] = useState(5);
+  const [time, setTime] = useState(7);
   const [timerOn, setTimerOn] = useState(false);
 
   const [pokeCount, setPokeCount] = useState(1);
@@ -79,7 +78,7 @@ const GameMain = ({ pokemon, sound }) => {
     sound.playBackground();
     setGameReset((current) => current + 1);
     setPokeCount(1);
-    setTime(5);
+    setTime(7);
     gameStart();
     setGameResult(false);
   };
